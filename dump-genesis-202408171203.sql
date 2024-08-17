@@ -61,7 +61,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES (52,'Dusan','Suril','jXa4g3H7oPq2','7a59d35c-b6e3-4a8d-9b9b-ccd9d067ee50');
+INSERT INTO `user_info` VALUES (52,'Dusan','Sauron','jXa4g3H7oPq2','7a59d35c-b6e3-4a8d-9b9b-ccd9d067ee50'),(53,'Mark','Suril','yB9fR6tK0wLm','cc0e0d67-d3a8-4b55-a5ed-84fb6a4bc679'),(54,'Gaba','Sem','cN1vZ8pE5sYx','82673582-8ad7-49cf-a5c1-af23f14367a6');
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-17 11:44:42
+-- Dump completed on 2024-08-17 12:03:40

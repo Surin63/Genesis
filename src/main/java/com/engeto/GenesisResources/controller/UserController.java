@@ -4,7 +4,6 @@ package com.engeto.GenesisResources.controller;
 import com.engeto.GenesisResources.model.ApiErrorDTO;
 import com.engeto.GenesisResources.model.UserInfoDTO;
 import com.engeto.GenesisResources.service.UserInfoService;
-import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;

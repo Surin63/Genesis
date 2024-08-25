@@ -4,17 +4,17 @@ import com.engeto.GenesisResources.domain.UserInfo;
 import com.engeto.GenesisResources.model.UserInfoDTO;
 import com.engeto.GenesisResources.repository.UserInfoRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
-
-import static net.sf.jsqlparser.util.validation.metadata.NamedObject.user;
 
 @Slf4j
 @Service
@@ -27,7 +27,7 @@ public class UserInfoService {
     private final UserInfoRepository userInfoRepository;
 
     public UserInfoService(UserInfoRepository userInfoRepository) {
-        this.userInfoRepository= userInfoRepository;
+        this.userInfoRepository = userInfoRepository;
     }
 
     public List<UserInfoDTO> findAllUsersDetail() {
@@ -65,7 +65,7 @@ public class UserInfoService {
         UserInfo userInfoById = userInfoRepository.findById(id).orElse(null);
         if (userInfoById != null) {
             return convertDomainToDTO(userInfoById, new UserInfoDTO());
-        }else return null;
+        } else return null;
     }
 
     public UserInfoDTO getUserById(Long id) {
@@ -74,7 +74,7 @@ public class UserInfoService {
             userInfoById.setUuid(null);
             userInfoById.setPersonId(null);
             return convertDomainToDTO(userInfoById, new UserInfoDTO());
-        }else return null;
+        } else return null;
     }
 
     public UserInfoDTO createUser(UserInfoDTO userInfoDTO) {
@@ -101,7 +101,29 @@ public class UserInfoService {
             logger.error(errorMessage);
             throw new RuntimeException(errorMessage);
         }
+        if (!checkValidPersonIdAFile(personId)) {
+            String errorMessage = "PersonID: " + personId + " is not approved PersonID from dataPersonID.txt";
+            logger.error(errorMessage);
+            throw new RuntimeException(errorMessage);
+        }
     }
+
+
+    public boolean checkValidPersonIdAFile(String personId) {
+        try (BufferedReader br = new BufferedReader(new FileReader("dataPersonId.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.contains(personId)) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 
     public void updateUserById(Long id, UserInfoDTO userInfoDTO) {
         UserInfo convertedUserInfo = mapDTOToDomain(userInfoDTO);
@@ -115,6 +137,8 @@ public class UserInfoService {
     public void delete(Long id) {
         userInfoRepository.deleteById(id);
     }
+
+
 
 
 }

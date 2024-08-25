@@ -2371,3 +2371,174 @@ java.lang.IllegalArgumentException: The given id must not be null
 2024-08-25T08:40:53.468+02:00 ERROR 6444 --- [http-nio-8080-exec-1] c.e.G.service.UserInfoService            : PersonID: gT4cR5wS0lVx is not approved PersonID from dataPersonID.txt
 2024-08-25T08:44:26.902+02:00 ERROR 6444 --- [http-nio-8080-exec-3] c.e.G.service.UserInfoService            : PersonId: dW9pL2eU1yNc already exists.
 2024-08-25T09:03:07.145+02:00  WARN 6444 --- [HikariPool-21 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-21 - Thread starvation or clock leap detected (housekeeper delta=14m22s246ms50µs900ns).
+2024-08-25T20:02:51.056+02:00  WARN 6444 --- [HikariPool-21 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-21 - Thread starvation or clock leap detected (housekeeper delta=10h55m17s780ms536µs800ns).
+2024-08-25T20:23:10.615+02:00  INFO 6444 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 9 class path changes (0 additions, 9 deletions, 0 modifications)
+2024-08-25T20:23:10.695+02:00  INFO 6444 --- [Thread-128] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-25T20:23:10.718+02:00  INFO 6444 --- [Thread-128] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown initiated...
+2024-08-25T20:23:10.782+02:00  INFO 6444 --- [Thread-128] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown completed.
+2024-08-25T20:23:11.116+02:00  INFO 6444 --- [restartedMain] c.e.G.GenesisResourcesApplication        : Starting GenesisResourcesApplication using Java 20.0.2 with PID 6444 (C:\OpenJDK\jdk-20.0.2\Genesis2\target\classes started by HP in C:\OpenJDK\jdk-20.0.2\Genesis2)
+2024-08-25T20:23:11.117+02:00  INFO 6444 --- [restartedMain] c.e.G.GenesisResourcesApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-25T20:23:12.188+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:23:12.188+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-25T20:23:12.189+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2024-08-25T20:23:12.204+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:23:12.205+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-25T20:23:12.208+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-08-25T20:23:12.298+02:00  WARN 6444 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.NullPointerException: Cannot read field "generatedClass" because "data" is null
+2024-08-25T20:23:12.324+02:00  INFO 6444 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-25T20:23:12.332+02:00 ERROR 6444 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.NullPointerException: Cannot read field "generatedClass" because "data" is null
+	at org.springframework.cglib.proxy.Enhancer.nextInstance(Enhancer.java:783) ~[spring-core-6.1.4.jar:6.1.4]
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:321) ~[spring-core-6.1.4.jar:6.1.4]
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562) ~[spring-core-6.1.4.jar:6.1.4]
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407) ~[spring-core-6.1.4.jar:6.1.4]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.createClass(ConfigurationClassEnhancer.java:138) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:109) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:533) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:310) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:153) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.3.jar:3.2.3]
+	at com.engeto.GenesisResources.GenesisResourcesApplication.main(GenesisResourcesApplication.java:13) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.3.jar:3.2.3]
+
+2024-08-25T20:23:15.244+02:00  INFO 6444 --- [restartedMain] c.e.G.GenesisResourcesApplication        : Starting GenesisResourcesApplication using Java 20.0.2 with PID 6444 (C:\OpenJDK\jdk-20.0.2\Genesis2\target\classes started by HP in C:\OpenJDK\jdk-20.0.2\Genesis2)
+2024-08-25T20:23:15.244+02:00  INFO 6444 --- [restartedMain] c.e.G.GenesisResourcesApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-25T20:23:15.957+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:23:15.957+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-25T20:23:15.965+02:00  INFO 6444 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.engeto.GenesisResources.repository.UserInfoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-25T20:23:15.965+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2024-08-25T20:23:15.971+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:23:15.972+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-25T20:23:15.978+02:00  INFO 6444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 1 JPA repository interface.
+2024-08-25T20:23:16.383+02:00  INFO 6444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-25T20:23:16.388+02:00  INFO 6444 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-25T20:23:16.388+02:00  INFO 6444 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-08-25T20:23:16.440+02:00  INFO 6444 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-25T20:23:16.440+02:00  INFO 6444 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1193 ms
+2024-08-25T20:23:16.624+02:00  INFO 6444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Starting...
+2024-08-25T20:23:16.686+02:00  INFO 6444 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-22 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f5de84f
+2024-08-25T20:23:16.687+02:00  INFO 6444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Start completed.
+2024-08-25T20:23:16.688+02:00  INFO 6444 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/genesis'
+2024-08-25T20:23:17.058+02:00  INFO 6444 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-25T20:23:17.067+02:00  INFO 6444 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-25T20:23:17.090+02:00  INFO 6444 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-25T20:23:17.238+02:00  INFO 6444 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-25T20:23:17.267+02:00  INFO 6444 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-25T20:23:17.767+02:00  WARN 6444 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-25T20:23:19.045+02:00  INFO 6444 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-25T20:23:19.083+02:00  INFO 6444 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-08-25T20:23:19.197+02:00  INFO 6444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-08-25T20:23:19.245+02:00  INFO 6444 --- [restartedMain] c.e.G.GenesisResourcesApplication        : Started GenesisResourcesApplication in 4.057 seconds (process running for 724299.015)
+2024-08-25T20:23:19.250+02:00  INFO 6444 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-25T20:23:23.341+02:00  INFO 10880 --- [main] c.e.G.c.UserInfoControllerRestTest       : Starting UserInfoControllerRestTest using Java 20.0.2 with PID 10880 (started by HP in C:\OpenJDK\jdk-20.0.2\Genesis2)
+2024-08-25T20:23:23.343+02:00  INFO 10880 --- [main] c.e.G.c.UserInfoControllerRestTest       : No active profile set, falling back to 1 default profile: "default"
+2024-08-25T20:23:26.128+02:00  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:23:26.131+02:00  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-25T20:23:26.218+02:00  INFO 10880 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.engeto.GenesisResources.repository.UserInfoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-25T20:23:26.220+02:00  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 0 JDBC repository interfaces.
+2024-08-25T20:23:26.251+02:00  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:23:26.253+02:00  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-25T20:23:26.331+02:00  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+2024-08-25T20:23:28.437+02:00  INFO 10880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-08-25T20:23:28.468+02:00  INFO 10880 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-25T20:23:28.469+02:00  INFO 10880 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-08-25T20:23:28.614+02:00  INFO 10880 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-25T20:23:28.615+02:00  INFO 10880 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4665 ms
+2024-08-25T20:23:29.394+02:00  INFO 10880 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-25T20:23:29.575+02:00  INFO 10880 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-25T20:23:29.687+02:00  INFO 10880 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-25T20:23:30.306+02:00  INFO 10880 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-25T20:23:30.366+02:00  INFO 10880 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-25T20:23:31.160+02:00  INFO 10880 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b20aa21
+2024-08-25T20:23:31.163+02:00  INFO 10880 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-25T20:23:33.079+02:00  INFO 10880 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-25T20:23:33.149+02:00  INFO 10880 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-25T20:23:33.898+02:00  WARN 10880 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-25T20:23:35.354+02:00  INFO 10880 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-08-25T20:23:35.536+02:00  INFO 10880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 63052 (http) with context path ''
+2024-08-25T20:23:35.561+02:00  INFO 10880 --- [main] c.e.G.c.UserInfoControllerRestTest       : Started UserInfoControllerRestTest in 12.821 seconds (process running for 15.927)
+2024-08-25T20:23:37.261+02:00  INFO 10880 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-25T20:23:37.261+02:00  INFO 10880 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-25T20:23:37.265+02:00  INFO 10880 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-08-25T20:23:37.663+02:00  INFO 10880 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-25T20:23:37.668+02:00  INFO 10880 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-25T20:23:37.696+02:00  INFO 10880 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-25T20:24:14.852+02:00  INFO 15016 --- [main] c.e.G.c.UserInfoControllerRestTest       : Starting UserInfoControllerRestTest using Java 20.0.2 with PID 15016 (started by HP in C:\OpenJDK\jdk-20.0.2\Genesis2)
+2024-08-25T20:24:14.855+02:00  INFO 15016 --- [main] c.e.G.c.UserInfoControllerRestTest       : No active profile set, falling back to 1 default profile: "default"
+2024-08-25T20:24:17.321+02:00  INFO 15016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:24:17.323+02:00  INFO 15016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-25T20:24:17.382+02:00  INFO 15016 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.engeto.GenesisResources.repository.UserInfoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-25T20:24:17.383+02:00  INFO 15016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 0 JDBC repository interfaces.
+2024-08-25T20:24:17.416+02:00  INFO 15016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:24:17.419+02:00  INFO 15016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-25T20:24:17.485+02:00  INFO 15016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interface.
+2024-08-25T20:24:19.450+02:00  INFO 15016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-08-25T20:24:19.480+02:00  INFO 15016 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-25T20:24:19.483+02:00  INFO 15016 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-08-25T20:24:19.636+02:00  INFO 15016 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-25T20:24:19.637+02:00  INFO 15016 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4216 ms
+2024-08-25T20:24:20.517+02:00  INFO 15016 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-25T20:24:20.683+02:00  INFO 15016 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-25T20:24:20.778+02:00  INFO 15016 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-25T20:24:21.376+02:00  INFO 15016 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-25T20:24:21.461+02:00  INFO 15016 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-25T20:24:22.238+02:00  INFO 15016 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@351be56b
+2024-08-25T20:24:22.246+02:00  INFO 15016 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-25T20:24:24.377+02:00  INFO 15016 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-25T20:24:24.457+02:00  INFO 15016 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-25T20:24:25.587+02:00  WARN 15016 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-25T20:24:27.711+02:00  INFO 15016 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-08-25T20:24:27.999+02:00  INFO 15016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 63073 (http) with context path ''
+2024-08-25T20:24:28.047+02:00  INFO 15016 --- [main] c.e.G.c.UserInfoControllerRestTest       : Started UserInfoControllerRestTest in 13.781 seconds (process running for 16.782)
+2024-08-25T20:24:30.628+02:00  INFO 15016 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-25T20:24:30.628+02:00  INFO 15016 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-25T20:24:30.629+02:00  INFO 15016 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-25T20:24:31.234+02:00  INFO 15016 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-25T20:24:31.238+02:00  INFO 15016 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-25T20:24:31.268+02:00  INFO 15016 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-25T20:25:27.580+02:00  INFO 19096 --- [main] c.e.G.c.UserInfoControllerRestTest       : Starting UserInfoControllerRestTest using Java 20.0.2 with PID 19096 (started by HP in C:\OpenJDK\jdk-20.0.2\Genesis2)
+2024-08-25T20:25:27.582+02:00  INFO 19096 --- [main] c.e.G.c.UserInfoControllerRestTest       : No active profile set, falling back to 1 default profile: "default"
+2024-08-25T20:25:30.313+02:00  INFO 19096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:25:30.315+02:00  INFO 19096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-25T20:25:30.378+02:00  INFO 19096 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.engeto.GenesisResources.repository.UserInfoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-25T20:25:30.380+02:00  INFO 19096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 0 JDBC repository interfaces.
+2024-08-25T20:25:30.417+02:00  INFO 19096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-25T20:25:30.419+02:00  INFO 19096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-25T20:25:30.485+02:00  INFO 19096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
+2024-08-25T20:25:32.488+02:00  INFO 19096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-08-25T20:25:32.515+02:00  INFO 19096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-25T20:25:32.516+02:00  INFO 19096 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-08-25T20:25:32.723+02:00  INFO 19096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-25T20:25:32.724+02:00  INFO 19096 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4524 ms
+2024-08-25T20:25:33.632+02:00  INFO 19096 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-25T20:25:33.753+02:00  INFO 19096 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-08-25T20:25:33.835+02:00  INFO 19096 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-25T20:25:34.502+02:00  INFO 19096 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-25T20:25:34.545+02:00  INFO 19096 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-25T20:25:35.154+02:00  INFO 19096 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@351be56b
+2024-08-25T20:25:35.158+02:00  INFO 19096 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-25T20:25:36.947+02:00  INFO 19096 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-25T20:25:37.026+02:00  INFO 19096 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-25T20:25:38.132+02:00  WARN 19096 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-25T20:25:40.232+02:00  INFO 19096 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-08-25T20:25:40.548+02:00  INFO 19096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 63102 (http) with context path ''
+2024-08-25T20:25:40.579+02:00  INFO 19096 --- [main] c.e.G.c.UserInfoControllerRestTest       : Started UserInfoControllerRestTest in 13.603 seconds (process running for 16.952)
+2024-08-25T20:25:42.233+02:00  INFO 19096 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-25T20:25:42.234+02:00  INFO 19096 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-25T20:25:42.236+02:00  INFO 19096 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-25T20:25:42.698+02:00  INFO 19096 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-25T20:25:42.702+02:00  INFO 19096 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-25T20:25:42.725+02:00  INFO 19096 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

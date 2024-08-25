@@ -114,7 +114,7 @@ class UserInfoControllerRestTest {
         UserInfoDTO userInfoDTO = UserInfoDTO.builder()
                 .name("Tomas")
                 .surname("Seva")
-                .personId("123456789321")
+                .personId("dW9pL2eU1yNc")
                 .build();
 
         //WHEN
@@ -149,7 +149,7 @@ class UserInfoControllerRestTest {
         UserInfoDTO userInfoDTO = UserInfoDTO.builder()
                 .name("Tomas")
                 .surname("Seva")
-                .personId("123256789321")
+                .personId("dW9pL2eU1yNc")
                 .build();
         UserInfoDTO updateUserInfoDTO = new UserInfoDTO();
         updateUserInfoDTO.setName("UpdatedName");
@@ -205,7 +205,7 @@ class UserInfoControllerRestTest {
         UserInfoDTO userInfoDTO = UserInfoDTO.builder()
                 .name("Tomas")
                 .surname("Seva")
-                .personId("123456785321")
+                .personId("dW9pL2eU1yNc")
                 .build();
 
         ResponseEntity<UserInfoDTO> savedUserInfoDTO = restTemplate.postForEntity(
